@@ -71,6 +71,26 @@ public class AdminUserDTO implements Serializable {
         this.authorities = user.getAuthorities().stream().map(Authority::getName).collect(Collectors.toSet());
     }
 
+    public AdminUserDTO(
+        String login,
+        String firstName,
+        String lastName,
+        String email,
+        String imageUrl,
+        boolean activated,
+        String langKey,
+        Set<String> authorities
+    ) {
+        this.login = login;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.imageUrl = imageUrl;
+        this.activated = activated;
+        this.langKey = langKey;
+        this.authorities = authorities;
+    }
+
     public Long getId() {
         return id;
     }
